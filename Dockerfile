@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     postgresql-client \
     libpq-dev \
-    && docker-php-ext-install zip pdo pdo_pgsql
+    && docker-php-ext-install zip pdo pdo_pgsql exif
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
