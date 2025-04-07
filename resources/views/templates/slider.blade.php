@@ -5,7 +5,7 @@
                 <div class="owl-carousel owl-theme home-slider">
                     @foreach($featuredPosts as $post)
                         <div>
-                            <a href="{{ route('posts.show', [$post->category->slug, $post->slug]) }}" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ $post->getFirstMediaUrl('images') }}');">
+                            <a href="{{ route('posts.show', [$post->category->slug, $post->slug]) }}" class="a-block d-flex align-items-center height-lg" style="background-image: url('{{ $post->getFirstImage() }}');">
                                 <div class="text half-to-full">
                                     <div class="post-meta">
                                         <span class="category">{{ $post->category->name }}</span>

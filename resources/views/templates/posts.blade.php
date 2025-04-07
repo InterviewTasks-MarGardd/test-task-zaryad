@@ -4,7 +4,7 @@
             <a href="{{ route('posts.show', [$post->category->slug, $post->slug]) }}"
                class="blog-entry element-animate"
                data-animate-effect="fadeIn">
-                <img src="{{ $post->getFirstMediaUrl('images') }}" alt="{{ $post->title }}" class="img-fluid" style="height: 233px">
+                <img src="{{ $post->getFirstImage() }}" alt="{{ $post->title }}" class="img-fluid" style="height: 233px">
                 <div class="blog-content-body">
                     <div class="post-meta">
                         <span class="category">{{ $post->category->name }}</span>

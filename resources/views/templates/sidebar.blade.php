@@ -31,7 +31,7 @@
                     <li>
                         <a href="{{ route('posts.show', [$post->category->slug, $post->slug]) }}">
                             @if($post->hasMedia('images'))
-                                <img src="{{ $post->getFirstMediaUrl('images') }}" alt="{{ $post->title }}" class="mr-4">
+                                <img src="{{ $post->getFirstImage() }}" alt="{{ $post->title }}" class="mr-4">
                             @endif
                             <div class="text">
                                 <h4>{{ Str::limit($post->title, 50) }}</h4>

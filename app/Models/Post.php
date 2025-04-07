@@ -25,4 +25,13 @@ class Post extends Model implements HasMedia
     {
         $this->addMediaCollection('images');
     }
+
+    public function getFirstImage(): string
+    {
+        $firstMedia = $this->getFirstMedia('images');
+
+        return $firstMedia
+            ? $this->getFirstMediaUrl('images')
+            : asset('images/not_image.png');
+    }
 }

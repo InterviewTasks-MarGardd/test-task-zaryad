@@ -71,8 +71,6 @@ class ParseXmlCommand extends Command
             if (isset($item->$field)) {
 //                $imageUrl = (string)$item->$field;
                 $imageUrl = asset('images/test.png');
-            } elseif ($i === 1) {
-                $imageUrl = asset('images/not_image.png');
             } else {
                 return;
             }

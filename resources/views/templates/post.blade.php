@@ -6,7 +6,8 @@
 </div>
 <div class="post-content-body">
     <div class="row mb-5">
-        @if(!empty($media = $post->getMedia('images')))
+        @php $media = $post->getMedia('images') @endphp
+        @if($media->isNotEmpty())
             <div class="col-md-12 mb-4 element-animate">
                 <img src="{{ $media[0]->getUrl() }}" alt="{{ $post->title }}" class="img-fluid">
             </div>
@@ -20,6 +21,10 @@
                     <img src="{{ $media[2]->getUrl() }}" alt="Image placeholder" class="img-fluid">
                 </div>
             @endif
+        @else
+            <div class="col-md-12 mb-4 element-animate">
+                <img src="{{ asset('images/not_image.png') }}" alt="{{ $post->title }}" class="img-fluid">
+            </div>
         @endif
     </div>
     <p>{!! nl2br(e($post->description)) !!}</p>
