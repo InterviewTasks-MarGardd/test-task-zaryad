@@ -71,15 +71,13 @@ class ParseXmlCommand extends Command
             if (isset($item->$field)) {
 //                $imageUrl = (string)$item->$field;
                 $imageUrl = asset('images/test.png');
-            } else {
-                return;
+                try {
+                    $post->addMediaFromUrl($imageUrl)
+                        ->toMediaCollection('images');
+                } catch (\Exception $e) {
+                    $this->error("Failed to add image: {$imageUrl}");
+                }
             }
-             try {
-                 $post->addMediaFromUrl($imageUrl)
-                     ->toMediaCollection('images');
-             } catch (\Exception $e) {
-                 $this->error("Failed to add image: {$imageUrl}");
-             }
         }
     }
 }
